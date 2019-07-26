@@ -1,2 +1,2 @@
-# Competitive-Programming-Libaries
+# Library
 A collection of competitive programming algorithms
