@@ -43,6 +43,11 @@ int cross(vec a, vec b) {
 	return a.x * b.y - a.y * b.x;
 }
 
+double angle(point a, point o, point b) {
+	vec oa = to_vec(o, a), ob = to_vec(o, b);
+	return acos(dot(oa, ob) / sqrt(norm_sq(oa) * norm_sq(ob)));
+}
+
 bool ccw(point p, point q, point r) {
 	return cross(to_vec(p, q), to_vec(p, r)) > 0;
 }
@@ -63,7 +68,7 @@ int gcd(int a, int b) {
 	return b == 0 ? a : gcd(b, a % b);
 }
 
-line points_to_line(point p1, point p2) {
+line to_line(point p1, point p2) {
 	int a = p2.y - p1.y, b = p1.x - p2.x, c = p1.y * p2.x - p1.x * p2.y;
 	int d = gcd(gcd(abs(a), abs(b)), abs(c));
 	return { a / d, b / d, c / d };
@@ -92,13 +97,13 @@ struct seg {
 	seg(point _p1, point _p2) : p1(_p1), p2(_p2) {}
 };
 
-line seg_to_line(seg s) {
-	return points_to_line(s.p1, s.p2);
+line to_line(seg s) {
+	return to_line(s.p1, s.p2);
 }
 
 double point_to_seg(point p, seg s) {
 	int a = norm_sq(to_vec(s.p1, s.p2)), b = norm_sq(to_vec(p, s.p1)), c = norm_sq(to_vec(p, s.p2));
-	if (a + b > c && a + c > b) return point_to_line(p, seg_to_line(s));
+	if (a + b > c && a + c > b) return point_to_line(p, to_line(s));
 	else return min(dist(p, s.p1), dist(p, s.p2));
 }
 
