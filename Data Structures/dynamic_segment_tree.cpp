@@ -8,7 +8,7 @@ struct node {
 	node* get_c(int i) {
 		return (!c[i] ? c[i] = new node : c[i]);
 	}
-	void update(int x, long long v, int l, int r) {
+	void update(int x, int v, int l, int r) {
 		if (l == r) val += v;
 		else {
 			int m = (l + r) >> 1;
@@ -16,7 +16,7 @@ struct node {
 			val = (c[0] ? c[0]->val : 0) + (c[1] ? c[1]->val : 0);
 		}
 	}
-	long long query(int a, int b, int l, int r) {
+	int query(int a, int b, int l, int r) {
 		if (a > r || b < l) return 0;
 		if (a <= l && b >= r) return val;
 		int m = (l + r) >> 1;
