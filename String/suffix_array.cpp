@@ -1,8 +1,3 @@
-#include <algorithm>
-#include <vector>
-#include <string>
-using namespace std;
-
 vector<int> suffix_array(string& S) {
 	int N = S.length();
 	vector<int> SA(N), rank(N);
@@ -21,8 +16,7 @@ vector<int> suffix_array(string& S) {
 		vector<int> cnt(N);
 		for (int i = 0; i < N; i++) cnt[i] = i;
 		for (int i = 0; i < N; i++) {
-			int s = tmp[i] - t;
-			if (s >= 0) SA[cnt[rank[s]]++] = s;
+			if (tmp[i] >= t) SA[cnt[rank[tmp[i] - t]]++] = tmp[i] - t;
 		}
 	}
 	return SA;

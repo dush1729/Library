@@ -1,8 +1,3 @@
-#include <algorithm>
-#include <vector>
-#include <cmath>
-using namespace std;
-
 struct point {
 	int x, y;
 	point() { x = y = 0; }
