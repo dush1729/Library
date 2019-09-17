@@ -1,7 +1,3 @@
-#include <string>
-#include <vector>
-using namespace std;
-
 int KMP(string &S, string &T) {
 	// Generate KMP table
 	vector<int> F(T.length() + 1, 0);
