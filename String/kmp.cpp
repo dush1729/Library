@@ -1,4 +1,4 @@
-int KMP(string &S, string &T) {
+int kmp(string &S, string &T) {
 	// Generate KMP table
 	vector<int> F(T.length() + 1, 0);
 	F[0] = -1;
@@ -14,6 +14,11 @@ int KMP(string &S, string &T) {
 		if (S[i] == T[j]) {
 			i++, j++;
 			if (j == T.length()) return i - j; // Found match
+			/*if (j == T.size()) {
+				ret++; // Count matches
+				j = F[j];
+				if (j < 0) i++, j++;
+			}*/
 		}
 		else {
 			j = F[j];
