@@ -29,9 +29,9 @@
 using namespace std;
 typedef long long ll;
 typedef long double ld;
-typedef pair<int, int> ii, typedef pair<ll, ll> pl, typedef pair<ld, ld> pd;
-typedef vector<int> vi, typedef vector<ll> vl, typedef vector<ld> vd;
-typedef vector<ii> vii, typedef vector<pl> vpl, typedef vector<pd> vpd;
+typedef pair<int, int> ii; typedef pair<ll, ll> pl; typedef pair<ld, ld> pd;
+typedef vector<int> vi; typedef vector<ll> vl; typedef vector<ld> vd;
+typedef vector<ii> vii; typedef vector<pl> vpl; typedef vector<pd> vpd;
 constexpr auto INF = (int)1e9;
 constexpr auto LINF = (ll)1e18;
 
