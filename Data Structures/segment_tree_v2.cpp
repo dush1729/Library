@@ -53,11 +53,11 @@ public:
 	}
 	void update(int a, int b, T v, int l = 0, int r = -1, int n = 1) {
 		if (r == -1) r = N - 1;
-		push(n, l, r);
+		push(l, r, n);
 		if (l > b || r < a) return;
 		if (l >= a && r <= b) {
 			tmp[n] = v;
-			push(n, l, r);
+			push(l, r, n);
 		}
 		else {
 			int m = (l + r) >> 1;
@@ -68,7 +68,7 @@ public:
 	T query(int a, int b, int l = 0, int r = -1, int n = 1) {
 		if (r == -1) r = N - 1;
 		if (l > b || r < a) return 0;
-		push(n, l, r);
+		push(l, r, n);
 		if (l >= a && r <= b) return seg[n];
 		int m = (l + r) >> 1;
 		return query(a, b, l, m, n << 1) + query(a, b, m + 1, r, n << 1 | 1);

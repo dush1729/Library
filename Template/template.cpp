@@ -36,7 +36,7 @@ constexpr ll MOD = 1e9+7;
 const ld PI = 4*atan((ld)1);
 
 int main() {
-  init_io("abc");
+  init_io();
   
   
 }
