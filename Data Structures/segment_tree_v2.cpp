@@ -51,7 +51,7 @@ public:
 			pull(n);
 		}
 	}
-	void update(int a, int b, T v, int l = 0, int r = -1, int n = 1) {
+	void update_range(int a, int b, T v, int l = 0, int r = -1, int n = 1) {
 		if (r == -1) r = N - 1;
 		push(l, r, n);
 		if (l > b || r < a) return;
@@ -61,7 +61,7 @@ public:
 		}
 		else {
 			int m = (l + r) >> 1;
-			update(a, b, v, l, m, n << 1), update(a, b, v, m + 1, r, n << 1 | 1);
+			update_range(a, b, v, l, m, n << 1), update_range(a, b, v, m + 1, r, n << 1 | 1);
 			pull(n);
 		}
 	}
