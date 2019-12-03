@@ -10,7 +10,7 @@
 #include <unordered_map>
 #include <cmath>
 #include <cstring>
-#define init_io(pname) ifstream cin((string)pname+".in"); ofstream cout((string)pname+".out"); ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define io(s) if (fopen(((string)s+".in").c_str(), "r")) { freopen(((string)s+".in").c_str(), "r", stdin); freopen(((string)s+".out").c_str(), "w", stdout); } ios_base::sync_with_stdio(false); cin.tie(NULL)
 #define FOR(i, a, b, in) for (int i = (a); i < (b); i += in)
 #define REP(i, a, b) for (int i = (a); i < (b); i++)
 #define RFOR(i, a, b, in) for (int i = (a) - 1; i >= (b); i -= in)
@@ -27,6 +27,7 @@
 #define rsz resize
 #define mem(a, b) memset(a, (b), sizeof(a))
 using namespace std;
+typedef string str;
 typedef long long ll;
 typedef long double ld;
 typedef pair<int, int> ii; typedef pair<ll, ll> pl; typedef pair<ld, ld> pd;
@@ -36,7 +37,7 @@ constexpr auto INF = (int)1e9;
 constexpr auto LINF = (ll)1e18;
 
 int main() {
-    init_io("abc");
+    io("abc");
 
 
     
