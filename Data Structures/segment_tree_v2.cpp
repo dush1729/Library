@@ -67,7 +67,7 @@ public:
 	}
 	T query(int a, int b, int l = 0, int r = -1, int n = 1) {
 		if (r == -1) r = N - 1;
-		if (l > b || r < a) return 0;
+		if (a > b || l > b || r < a) return 0;
 		push(l, r, n);
 		if (l >= a && r <= b) return seg[n];
 		int m = (l + r) >> 1;
