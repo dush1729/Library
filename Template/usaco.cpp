@@ -1,16 +1,7 @@
-#include <algorithm>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <queue>
-#include <set>
-#include <map>
-#include <unordered_set>
-#include <unordered_map>
-#include <cmath>
-#include <cstring>
-#define io(s) if (fopen(((string)s+".in").c_str(), "r")) { freopen(((string)s+".in").c_str(), "r", stdin); freopen(((string)s+".out").c_str(), "w", stdout); } ios_base::sync_with_stdio(false); cin.tie(NULL)
+#include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/rope>
 #define FOR(i, a, b, in) for (int i = (a); i < (b); i += in)
 #define REP(i, a, b) for (int i = (a); i < (b); i++)
 #define RFOR(i, a, b, in) for (int i = (a) - 1; i >= (b); i -= in)
@@ -27,14 +18,29 @@
 #define rsz resize
 #define mem(a, b) memset(a, (b), sizeof(a))
 using namespace std;
+using namespace __gnu_pbds;
+using namespace __gnu_cxx;
 typedef string str;
 typedef long long ll;
 typedef long double ld;
+typedef complex<ld> cd;
 typedef pair<int, int> ii; typedef pair<ll, ll> pl; typedef pair<ld, ld> pd;
 typedef vector<int> vi; typedef vector<ll> vl; typedef vector<ld> vd;
 typedef vector<ii> vii; typedef vector<pl> vpl; typedef vector<pd> vpd;
-constexpr auto INF = (int)1e9;
-constexpr auto LINF = (ll)1e18;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
+typedef tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_multiset; // WARNING: May be broken
+constexpr int INF = 1e9;
+constexpr ll LINF = 1e18;
+constexpr ll MOD = 1e9+7;
+const ld PI = 4*atan((ld)1);
+void io(const string& s) {
+    if (fopen((s+".in").c_str(), "r")) {
+        freopen((s+".in").c_str(), "r", stdin);
+        freopen((s+".out").c_str(), "w", stdout);
+    } 
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL), cout.tie(NULL);
+}
 
 int main() {
     io("abc");
