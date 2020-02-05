@@ -9,6 +9,7 @@
 #define trav(a, x) for (auto& a : x)
 #define mp make_pair
 #define pb push_back
+#define eb emplace_back
 #define f first
 #define s second
 #define lb lower_bound
@@ -33,7 +34,7 @@ constexpr int INF = 1e9;
 constexpr ll LINF = 1e18;
 constexpr ll MOD = 1e9+7;
 const ld PI = 4*atan((ld)1);
-void io(const string& s) {
+void io(const str& s) {
     if (fopen((s+".in").c_str(), "r")) {
         freopen((s+".in").c_str(), "r", stdin);
         freopen((s+".out").c_str(), "w", stdout);
