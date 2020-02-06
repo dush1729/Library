@@ -10,6 +10,7 @@
 #define trav(a, x) for (auto& a : x)
 #define mp make_pair
 #define pb push_back
+#define eb emplace_back
 #define f first
 #define s second
 #define lb lower_bound
