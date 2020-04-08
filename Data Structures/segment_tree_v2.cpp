@@ -19,7 +19,7 @@ public:
 	}
 	void pull(int n) { seg[n] = seg[n << 1] + seg[n << 1 | 1]; }
 	void push(int l, int r, int n) {
-		seg[n] = (r - l + 1) * tmp[n];
+		seg[n] += (r - l + 1) * tmp[n];
 		if (l != r) tmp[n << 1] += tmp[n], tmp[n << 1 | 1] += tmp[n];
 		tmp[n] = 0;
 	}
