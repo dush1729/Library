@@ -56,7 +56,7 @@ public:
 		push(l, r, n);
 		if (l > b || r < a) return;
 		if (l >= a && r <= b) {
-			tmp[n] = v;
+			tmp[n] += v;
 			push(l, r, n);
 		}
 		else {
