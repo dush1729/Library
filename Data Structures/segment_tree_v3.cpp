@@ -1,4 +1,4 @@
-int seg[400004], tmp[400004];
+int seg[400004] = { 0 }, tmp[400004] = { 0 };
 inline int pull(const int& l, const int& r) { return l + r; }
 inline void push(int l, int r, int n) {
 	seg[n] += (r - l + 1) * tmp[n];
