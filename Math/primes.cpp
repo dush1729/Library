@@ -3,16 +3,16 @@ bitset<10000001> bs;
 vector<int> pr;
 
 void sieve(int size) {
-	sieve_size = size + 1;
+	sieve_size = size;
 	bs.set(); bs[0] = bs[1] = 0;
-  	for (ll i = 2; i < sieve_size; ++i) if (bs[i]) {
-		for (ll j = i * i; j < sieve_size; j += i) bs[j] = 0;
+  	for (ll i = 2; i <= sieve_size; ++i) if (bs[i]) {
+		for (ll j = i * i; j <= sieve_size; j += i) bs[j] = 0;
 		pr.push_back(i);
 	}
 }
 
 bool is_prime(ll N) {
-	if (N < sieve_size) return bs[N];
+	if (N <= sieve_size) return bs[N];
 	for (int i = 0; i < pr.size() && pr[i] * pr[i] <= N; ++i) if (N % pr[i] == 0) return false;
   	return true;
 }
