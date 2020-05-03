@@ -1,13 +1,7 @@
 struct node {
-	int val;
-	node* c[2];
-	node() {
-		val = 0;
-		c[0] = c[1] = 0;
-	}
-	node* get_c(int i) {
-		return (!c[i] ? c[i] = new node : c[i]);
-	}
+	int val; node* c[2];
+	node() { val = 0; c[0] = c[1] = 0; }
+	node* get_c(int i) { return (!c[i] ? c[i] = new node : c[i]); }
 	void update(int x, int v, int l, int r) {
 		if (l == r) val += v;
 		else {
