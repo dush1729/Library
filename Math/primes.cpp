@@ -1,8 +1,9 @@
-constexpr int sieve_size = 1e7;
-bitset<sieve_size + 1> bs;
+int sieve_size;
+bitset<10000001> bs;
 vector<int> pr;
 
-void sieve() {
+void sieve(int size) {
+	sieve_size = size + 1;
 	bs.set(); bs[0] = bs[1] = 0;
   	for (ll i = 2; i < sieve_size; ++i) if (bs[i]) {
 		for (ll j = i * i; j < sieve_size; j += i) bs[j] = 0;
