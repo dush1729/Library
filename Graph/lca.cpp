@@ -1,5 +1,5 @@
 int d[200005], L[200005][20];
-vi G[200005];
+vector<int> G[200005];
 
 void dfs(int u, int p) {
 	d[u] = d[p] + 1;
