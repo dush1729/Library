@@ -1,56 +1,33 @@
-#include <algorithm>
-#include <iostream>
-#include <climits>
-#include <tuple>
-#include <cmath>
-using namespace std;
 constexpr auto EPS = numeric_limits<double>::epsilon();
 
 struct point {
 	int x, y;
 	point() { x = y = 0; }
 	point(int _x, int _y) : x(_x), y(_y) {}
-	bool operator < (point p) const {
-		return (x == p.x && y < p.y) || x < p.x;
-	}
-	bool operator == (point p) const {
-		return x == p.x && y == p.y;
-	}
+	bool operator < (point p) const { return (x == p.x && y < p.y) || x < p.x; }
+	bool operator == (point p) const { return x == p.x && y == p.y; }
 };
 
-double dist(point& p1, point& p2) {
-	return hypot(p1.x - p2.x, p1.y - p2.y);
-}
+double dist(point& p1, point& p2) { return hypot(p1.x - p2.x, p1.y - p2.y); }
 
 struct vec {
 	int x, y;
 	vec(int _x, int _y) : x(_x), y(_y) {}
+	vec(point a, point b) { return vec(b.x - a.x, b.y - a.y); }
 };
 
-vec to_vec(point a, point b) {
-	return vec(b.x - a.x, b.y - a.y);
-}
+ll dot(vec a, vec b) { return (ll)a.x * b.x + (ll)a.y * b.y; }
 
-int dot(vec a, vec b) {
-	return (a.x * b.x + a.y * b.y);
-}
+ll norm_sq(vec v) { return (ll)v.x * v.x + (ll)v.y * v.y; }
 
-int norm_sq(vec v) {
-	return v.x * v.x + v.y * v.y;
-}
-
-int cross(vec a, vec b) {
-	return a.x * b.y - a.y * b.x;
-}
+ll cross(vec a, vec b) { return (ll)a.x * b.y - (ll)a.y * b.x; }
 
 double angle(point a, point o, point b) {
 	vec oa = to_vec(o, a), ob = to_vec(o, b);
 	return acos(dot(oa, ob) / sqrt(norm_sq(oa) * norm_sq(ob)));
 }
 
-bool ccw(point p, point q, point r) {
-	return cross(to_vec(p, q), to_vec(p, r)) > 0;
-}
+bool ccw(point p, point q, point r) { return cross(to_vec(p, q), to_vec(p, r)) > 0; }
 
 double angle(point a, point o, point b) {
 	vec oa = to_vec(o, a), ob = to_vec(o, b);
@@ -58,25 +35,16 @@ double angle(point a, point o, point b) {
 }
 
 struct line {
-	int a, b, c;
-	bool operator < (const line& l) const {
-		return tie(a, b, c) < tie(l.a, l.b, l.c);
+	ll a, b, c;
+	bool operator < (const line& l) const { return tie(a, b, c) < tie(l.a, l.b, l.c); }
+	line(point p1, point p2) {
+	    ll a = p2.y - p1.y, b = p1.x - p2.x, c = p1.y * p2.x - p1.x * p2.y;
+	    ll d = __gcd(__gcd(abs(a), abs(b)), abs(c));
+	    return { a / d, b / d, c / d };
 	}
 };
 
-int gcd(int a, int b) {
-	return b == 0 ? a : gcd(b, a % b);
-}
-
-line to_line(point p1, point p2) {
-	int a = p2.y - p1.y, b = p1.x - p2.x, c = p1.y * p2.x - p1.x * p2.y;
-	int d = gcd(gcd(abs(a), abs(b)), abs(c));
-	return { a / d, b / d, c / d };
-}
-
-double point_to_line(point p, line l) {
-	return abs(l.a * p.x + l.b * p.y + l.c) / hypot(l.a, l.b);
-}
+double point_to_line(point p, line l) { return abs(l.a * p.x + l.b * p.y + l.c) / hypot(l.a, l.b); }
 
 line perp_bi(point p1, point p2) {
 	int a = 2 * (p2.x - p1.x), b = 2 * (p2.y - p1.y), c = -a * (p1.x + p2.x) / 2 - b * (p1.y + p2.y) / 2;
@@ -97,9 +65,7 @@ struct seg {
 	seg(point _p1, point _p2) : p1(_p1), p2(_p2) {}
 };
 
-line to_line(seg s) {
-	return to_line(s.p1, s.p2);
-}
+line::line(seg s) { return to_line(s.p1, s.p2); }
 
 double point_to_seg(point p, seg s) {
 	int a = norm_sq(to_vec(s.p1, s.p2)), b = norm_sq(to_vec(p, s.p1)), c = norm_sq(to_vec(p, s.p2));
