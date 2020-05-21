@@ -17,14 +17,17 @@ bool is_prime(ll N) {
   	return true;
 }
 
-vector<int> pf(ll N) {
-	vector<int> factors;
+vector<ii> factorize(ll N) {
+	vector<ii> factors;
   	ll idx = 0, pf = pr[idx];
 	while (N != 1 && pf * pf <= N) {
-		while (N % pf == 0) { N /= pf; factors.push_back(pf); }
-		pf = pr[++idx];
+		if (N % pf == 0) {
+			factors.emplace_back(pf, 0);
+			while (N % pf == 0) { N /= pf; ++factors.back().s; }
+			pf = pr[++idx];
+		}		
   	}
-	if (N != 1) factors.push_back(N);
+	if (N != 1) factors.emplace_back(N, 1);
 	return factors;
 }
 
