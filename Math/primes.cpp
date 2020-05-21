@@ -24,8 +24,8 @@ vector<ii> factorize(ll N) {
 		if (N % pf == 0) {
 			factors.emplace_back(pf, 0);
 			while (N % pf == 0) { N /= pf; ++factors.back().s; }
-			pf = pr[++idx];
-		}		
+		}
+		pf = pr[++idx];	
   	}
 	if (N != 1) factors.emplace_back(N, 1);
 	return factors;
