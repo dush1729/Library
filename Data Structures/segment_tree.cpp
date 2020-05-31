@@ -1,70 +1,38 @@
-using namespace std;
-constexpr auto MAX_N = 100005;
-
-int A[MAX_N], seg[4 * MAX_N], tmp[4 * MAX_N];
-
-void build(int node, int start, int end) {
-	if (start == end) seg[node] = A[start];
+int seg[400004] = { 0 }, tmp[400004] = { 0 };
+inline int pull(const int& a, const int& b) { return a + b; }
+inline void push(int l, int r, int n) {
+	seg[n] += (r - l + 1) * tmp[n];
+	if (l != r) tmp[n << 1] += tmp[n], tmp[n << 1 | 1] += tmp[n];
+	tmp[n] = 0;
+}
+void update(int x, T v, int l = 0, int r = -1, int n = 1) {
+	if (r == -1) r = N - 1;
+	if (l == r) seg[n] += v;
 	else {
-		int mid = (start + end) >> 1;
-		build(node << 1, start, mid);
-		build((node << 1) + 1, mid + 1, end);
-		seg[node] = seg[node << 1] + seg[(node << 1) + 1];
+		int m = (l + r) >> 1;
+		x <= m ? update(x, v, l, m, n << 1) : update(x, v, m + 1, r, n << 1 | 1);
+		seg[n] = pull(seg[n << 1], seg[n << 1 | 1]);
 	}
 }
-
-void update(int node, int start, int end, int idx, int val) {
-	if (start == end) seg[node] += val;
-	else {
-		int mid = (start + end) >> 1;
-		(start <= idx && idx <= mid) ? update((node << 1), start, mid, idx, val) : update((node << 1) + 1, mid + 1, end, idx, val);
-		seg[node] = seg[node << 1] + seg[(node << 1) + 1];
-	}
-}
-
-int query(int node, int start, int end, int left, int right) {
-	if (left > end || right < start) return 0;
-	if (left <= start && right >= end) return seg[node];
-	int mid = (start + end) >> 1;
-	return query(node << 1, start, mid, left, right) + query((node << 1) + 1, mid + 1, end, left, right);
-}
-
-void update_range(int node, int start, int end, int left, int right, int val) {
-	if (tmp[node]) {
-		seg[node] += (end - start + 1) * tmp[node];
-		if (start != end) {
-			tmp[node << 1] += tmp[node];
-			tmp[(node << 1) + 1] += tmp[node];
-		}
-		tmp[node] = 0;
-	}
-	if (start > end || left > end || right < start) return;
-	if (left <= start && right >= end) {
-		seg[node] += (end - start + 1) * val;
-		if (start != end) {
-			tmp[node << 1] += val;
-			tmp[(node << 1) + 1] += val;
-		}
+void update(int a, int b, int v, int l = 0, int r = -1, int n = 1) {
+	if (r == -1) r = N - 1;
+	push(l, r, n);
+	if (l > b || r < a) return;
+	if (l >= a && r <= b) {
+		tmp[n] += v;
+		push(l, r, n);
 	}
 	else {
-		int mid = (start + end) >> 1;
-		update_range(node << 1, start, mid, left, right, val);
-		update_range((node << 1) + 1, mid + 1, end, left, right, val);
-		seg[node] = seg[node << 1] + seg[(node << 1) + 1];
+		int m = (l + r) >> 1;
+		update(a, b, v, l, m, n << 1), update(a, b, v, m + 1, r, n << 1 | 1);
+		seg[n] = pull(seg[n << 1], seg[n << 1 | 1]);
 	}
 }
-
-int query_range(int node, int start, int end, int left, int right) {
-	if (start > end || left > end || right < start) return 0;
-	if (tmp[node]) {
-		seg[node] += (end - start + 1) * tmp[node];
-		if (start != end) {
-			tmp[node << 1] += tmp[node];
-			tmp[(node << 1) + 1] += tmp[node];
-		}
-		tmp[node] = 0;
-	}
-	if (left <= start && right >= end) return seg[node];
-	int mid = (start + end) >> 1;
-	return query_range(node << 1, start, mid, left, right) + query_range((node << 1) + 1, mid + 1, end, left, right);
+int query(int a, int b, int l = 0, int r = -1, int n = 1) {
+	if (r == -1) r = N - 1;
+	if (a > b || l > b || r < a) return 0;
+	push(l, r, n);
+	if (l >= a && r <= b) return seg[n];
+	int m = (l + r) >> 1;
+	return pull(query(a, b, l, m, n << 1), query(a, b, m + 1, r, n << 1 | 1));
 }
