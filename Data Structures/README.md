@@ -9,4 +9,4 @@ Segment Tree (2D) | O(n<sup>2</sup>) | O(n) | O(log<sup>2</sup> n) | O(log<sup>2
 Fenwick Tree (2D) | O(n<sup>2</sup>) | O(n) | O(log<sup>2</sup> n) | - | O(log<sup>2</sup> n) | O(log<sup>2</sup> n)
 Quadtree | O(n<sup>2</sup>) | O(n) | O(log n) | O(log n) | O(log n) | O(n)
 
-*_Without compression_
+* _Without compression_
