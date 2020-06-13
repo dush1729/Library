@@ -1,7 +1,7 @@
-int d[200005], L[200005][20];
-vector<int> G[200005];
+int d[100001], L[100001][20];
+vector<int> G[100001];
 
-void dfs(int u, int p) {
+void dfs(int u = 1, int p = 0) {
 	d[u] = d[p] + 1;
 	L[u][0] = p;
 	for (int i = 0; i < 16 && L[u][i]; i++) L[u][i + 1] = L[L[u][i]][i];
