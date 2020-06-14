@@ -22,6 +22,4 @@ void tarjan(int u) {
 
 
 memset(scc, -1, sizeof scc), memset(in, -1, sizeof in);
-for (int u = 1; u <= N; u++) {
-	if (scc[u] == -1) tarjan(u);
-}
+for (int u = 1; u <= N; ++u) if (scc[u] == -1) tarjan(u);
