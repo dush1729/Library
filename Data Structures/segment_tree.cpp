@@ -17,7 +17,7 @@ void update(int x, T v, int l = 0, int r = -1, int n = 1) {
 void update(int a, int b, int v, int l = 0, int r = -1, int n = 1) {
 	if (r == -1) r = N - 1;
 	push(l, r, n);
-	if (l > b || r < a) return;
+	if (l > r || l > b || r < a) return;
 	if (l >= a && r <= b) {
 		tmp[n] += v;
 		push(l, r, n);
