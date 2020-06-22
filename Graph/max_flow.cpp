@@ -1,8 +1,8 @@
 /* Maximum-Flow solver using Dinic's Blocking Flow Algorithm.
- * Time Complexity:
- *   - O(V^2 E) for general graphs, but in practice ~O(E^1.5)
- *   - O(V^(1/2) E) for bipartite matching
- *   - O(min(V^(2/3), E^(1/2)) E) for unit capacity graphs
+   Time Complexity:
+     - O(V^2 E) for general graphs, but in practice ~O(E^1.5)
+     - O(V^(1/2) E) for bipartite matching
+     - O(min(V^(2/3), E^(1/2)) E) for unit capacity graphs
  */
 
 template<int V, class T = ll>
@@ -65,7 +65,6 @@ public:
 };
 
 int main() {
-	/* Example of usage */
 	max_flow<4> network;
 	network.add(0, 1, 75);
 	network.add(0, 2, 50);
@@ -75,6 +74,5 @@ int main() {
 
 	int flow = network.calc(0, 3);
 
-	/* Max-flow should be 80. */
-	cout << flow << endl;
+	cout << flow << endl; // Should be 80
 }
