@@ -1,11 +1,11 @@
-vector<int> suffix_array(string& S) {
+vector<int> suffix_array(string & S) {
 	int N = S.length();
 	vector<int> SA(N), rank(N);
 	for (int i = 0; i < N; i++) {
 		SA[i] = N - i - 1;
 		rank[i] = S[i];
 	}
-	stable_sort(SA.begin(), SA.end(), [&S](int i, int j) { return S[i] < S[j]; });
+	stable_sort(SA.begin(), SA.end(), [& S](int i, int j) { return S[i] < S[j]; });
 	for (int t = 1; t < N; t <<= 1) {
 		vector<int> tmp(rank);
 		for (int i = 0; i < N; i++) {
@@ -22,7 +22,7 @@ vector<int> suffix_array(string& S) {
 	return SA;
 }
 
-vector<int> lcp_array(const vector<int>& SA, string& S) {
+vector<int> lcp_array(const vector<int> & SA, string & S) {
 	int N = S.size();
 	vector<int> rank(N), LCP(N - 1);
 	for (int i = 0; i < N; i++) rank[SA[i]] = i;
