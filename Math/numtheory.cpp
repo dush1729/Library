@@ -15,7 +15,7 @@ int inv(int x) { return pw(x, MOD - 2); }
 
 int nCr(int n, int k) { return (ll)fact[n] * ifact[k] % MOD * ifact[n - k] % MOD; }
 
-for (int i = 0; i < n; ++i) {
+for (int i = 0; i < N; ++i) {
 	fact[i + 1] = (i + 1ll) * fact[i] % MOD;
 	ifact[i + 1] = inv(fact[i + 1]);
 }
