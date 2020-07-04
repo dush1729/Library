@@ -5,8 +5,7 @@
      - O(min(V^(2/3), E^(1/2)) E) for unit capacity graphs
  */
 
-template<int V, class T = ll>
-class max_flow {
+template<int V, class T = ll> class max_flow {
 	static const T INF = numeric_limits<T>::max();
 	struct edge {
 		int t, rev;
