@@ -5,7 +5,7 @@ inline void push(int l, int r, int n) {
 	if (l != r) tmp[n << 1] += tmp[n], tmp[n << 1 | 1] += tmp[n];
 	tmp[n] = 0;
 }
-void update(int x, T v, int l = 0, int r = -1, int n = 1) {
+void update(int x, int v, int l = 0, int r = -1, int n = 1) {
 	if (r == -1) r = N - 1;
 	if (l == r) seg[n] += v;
 	else {
