@@ -1,5 +1,5 @@
-int seg[400004] = { 0 }, tmp[400004] = { 0 };
-inline int pull(const int& a, const int& b) { return a + b; }
+int seg[400004], tmp[400004];
+inline int pull(const int & a, const int & b) { return a + b; }
 inline void push(int l, int r, int n) {
 	seg[n] += (r - l + 1) * tmp[n];
 	if (l != r) tmp[n << 1] += tmp[n], tmp[n << 1 | 1] += tmp[n];
