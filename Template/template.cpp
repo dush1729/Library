@@ -29,8 +29,8 @@ typedef complex<ld> cd;
 typedef pair<int, int> ii; typedef pair<ll, ll> pl; typedef pair<ld, ld> pd;
 typedef vector<int> vi; typedef vector<ll> vl; typedef vector<ld> vd;
 typedef vector<ii> vii; typedef vector<pl> vpl; typedef vector<pd> vpd;
-typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
-typedef tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_multiset; // WARNING: May be broken
+template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+template<typename T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>; // Use with caution
 constexpr int INF = 1e9;
 constexpr ll LINF = 1e18;
 constexpr ll MOD = 1e9+7;
