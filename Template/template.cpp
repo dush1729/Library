@@ -2,7 +2,6 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/rope>
-#define init_io ios_base::sync_with_stdio(false); cin.tie(NULL)
 #define FOR(i, a, b, in) for (int i = (a); i < (b); i += in)
 #define REP(i, a, b) for (int i = (a); i < (b); i++)
 #define RFOR(i, a, b, in) for (int i = (a) - 1; i >= (b); i -= in)
@@ -37,7 +36,8 @@ constexpr ll MOD = 1e9+7;
 const ld PI = 4*atan((ld)1);
 
 int main() {
-  init_io();
+    if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);
+    ios_base::sync_with_stdio(0), cin.tie(0);
   
   
 }
