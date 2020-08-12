@@ -1,5 +1,5 @@
 struct point {
-	ll x, y; // long long to avoid overflow problems
+	ll x, y;
 	point() { x = y = 0; }
 	point(ll _x, ll _y) : x(_x), y(_y) {}
 	bool operator < (point p) const { return (x == p.x && y < p.y) || x < p.x; }
@@ -27,7 +27,7 @@ double angle(point a, point o, point b) {
 
 bool ccw(point p, point q, point r) { return cross(vec(p, q), vec(p, r)) > 0; }
 
-bool in_polygon(point pt, const vector<point>& P) {
+bool in_polygon(point pt, const vector<point> & P) {
 	double sum = 0;
 	for (int i = 0; i < P.size() - 1; i++) {
 		if (pt == P[i]) return true;
@@ -36,14 +36,14 @@ bool in_polygon(point pt, const vector<point>& P) {
 	return fabs(sum) > acos(-1.0);
 }
 
-ll area(const vector<point>& P) {
+ll area(const vector<point> & P) {
 	ll res = 0;
 	for (int i = 0; i < (int)P.size() - 1; i++) res += (P[i].x * P[i + 1].y - P[i + 1].x * P[i].y);
 	return res;
 	// return res / 2.0;
 }
 
-vector<point> convex_hull(vector<point>& P) {
+vector<point> convex_hull(vector<point> & P) {
 	int n = P.size(), k = 0;
 	vector<point> H(2 * n);
 	sort(P.begin(), P.end());

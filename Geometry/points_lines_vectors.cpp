@@ -27,7 +27,7 @@ double angle(point a, point o, point b) {
 	return acos(dot(oa, ob) / sqrt(norm_sq(oa) * norm_sq(ob)));
 }
 
-// (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
+// bool ccw(pl p, pl q, pl r) { return (q.f - p.f) * (r.s - p.s) - (r.f - p.f) * (q.s - p.s) > 0; }
 bool ccw(point p, point q, point r) { return cross(vec(p, q), vec(p, r)) > 0; }
 
 struct line {
