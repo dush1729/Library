@@ -2,21 +2,17 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/rope>
-#define F(i, a, b, in) for (int i = (a); i < (b); i += in)
-#define R(i, a, b) for (int i = (a); i < (b); i++)
-#define RF(i, a, b, in) for (int i = (a) - 1; i >= (b); i -= in)
-#define RR(i, a, b) for (int i = (a) - 1; i >= (b); i--)
-#define tr(a, x) for (auto& a : x)
+#define f first
+#define s second
 #define mp make_pair
 #define pb push_back
 #define eb emplace_back
-#define f first
-#define s second
 #define lb lower_bound
 #define ub upper_bound
+#define rsz resize
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
-#define rsz resize
+#define tr(a, x) for (auto& a : x)
 #define mem(a, b) memset(a, (b), sizeof(a))
 using namespace std; using namespace __gnu_pbds; using namespace __gnu_cxx;
 using str = string; using ll = long long; using ld = long double; using cd = complex<ld>;
