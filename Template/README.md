@@ -7,4 +7,4 @@
 ### Notes
  
  - Symlink these files from the repository to your home directory so you can easily `cp ~/basic.cpp .` and `cat ~/template.cpp`
- - The line `if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);` is to redirect output to files `in` and `out`, if they exist
+ - The line `if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);` is to redirect input and  output to files `in` and `out`, if they exist
