@@ -2,7 +2,7 @@ constexpr ll MOD = 1e9+7;
 
 ll fact[200002] = { 1 }, ifact[200002] = { 1 };
 
-ll pw(ll base, ll exp) {
+inline ll pw(ll base, ll exp) {
 	ll res = 1;
 	while (exp) {
 		if (exp & 1) (res *= base) %= MOD;
@@ -11,9 +11,9 @@ ll pw(ll base, ll exp) {
 	return res;
 }
 
-ll inv(ll x) { return pw(x, MOD - 2); }
+inline ll inv(ll x) { return pw(x, MOD - 2); }
 
-ll nCr(int n, int k) { return fact[n] * ifact[k] % MOD * ifact[n - k] % MOD; }
+inline ll nCr(int n, int k) { return fact[n] * ifact[k] % MOD * ifact[n - k] % MOD; }
 
 for (int i = 0; i < N; ++i) {
 	fact[i + 1] = (i + 1ll) * fact[i] % MOD;
