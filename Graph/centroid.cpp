@@ -1,4 +1,4 @@
-namespace centroid {
+struct centroid {
     int sz[MN], cpar[MN];
     bitset<MN> vis;
 	void dfs(vector<int> * G, int u, int p = 0) {
