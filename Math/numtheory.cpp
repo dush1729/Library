@@ -1,6 +1,6 @@
 constexpr ll MOD = 1e9+7;
 
-ll fact[200002] = { 1 }, ifact[200002] = { 1 };
+ll fact[MN] = { 1 }, ifact[MN] = { 1 };
 
 inline ll pw(ll base, ll exp) {
 	ll res = 1;

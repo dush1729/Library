@@ -3,7 +3,7 @@
 using namespace std;
 using namespace __gnu_pbds;
 template<typename T> using ordered_set = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
-constexpr int MN = 100001;
+constexpr int MN = MN;
 
 ordered_set<int> S[4 * MN];
 
