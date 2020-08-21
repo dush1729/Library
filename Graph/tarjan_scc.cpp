@@ -1,6 +1,6 @@
-int cnt, scc_num, scc[MAXN], in[MAXN], low[MAXN];
+int cnt, scc_num, scc[MN], in[MN], low[MN];
 stack<int> s;
-bitset<MAXN> ins;
+bitset<MN> ins;
 
 void tarjan(int u) {
 	low[u] = in[u] = cnt++;
