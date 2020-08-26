@@ -1,4 +1,4 @@
-template<typename T> struct segtree {
+template<typename T> struct seg_tree {
 	T seg[4*MN], tmp[4*MN];
 	inline T pull(const T & a, const T & b) { return a+b; }
 	inline void push(int l, int r, int n) {
@@ -46,4 +46,4 @@ template<typename T> struct segtree {
 		int m = (l+r)>>1;
 		return pull(query(a, b, l, m, n<<1), query(a, b, m+1, r, n<<1|1));
 	}
-}
+};
