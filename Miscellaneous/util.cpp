@@ -1,7 +1,7 @@
-template <class BidirectionalIterator> // Coordinate compression
+template<typename BidirectionalIterator> // Coordinate compression
 void compress(BidirectionalIterator first, BidirectionalIterator last) {
-	vector<auto> tmp(first, last);
-	sort(tmp.begin(), tmp.end());
-	tmp.resize(unique(tmp.begin(), tmp.end()) - tmp.begin());
-	for (auto it = first; it != last; it++) *it = lower_bound(tmp.begin(), tmp.end(), *it) - tmp.begin();
+    vector<pair<BidirectionalIterator, int>> tmp;
+    for (auto it = first; it != last; ++it) tmp.emplace_back(*it, it-first);
+    sort(begin(tmp), end(tmp));
+    for (auto it = begin(tmp); it != end(tmp); ++it) (first+it->s) = it-begin(tmp);
 }
