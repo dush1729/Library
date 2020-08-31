@@ -24,8 +24,8 @@ template<typename T> using ordered_multiset = tree<T, null_type, less_equal<T>, 
 constexpr int INF = 1e9; constexpr ll LINF = 1e18; constexpr ll MOD = 1e9+7; constexpr ld PI = 4*atan((ld)1);
 
 int main() {
-    if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    
-    
+	if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);
+	ios_base::sync_with_stdio(0), cin.tie(0);
+	
+	
 }
