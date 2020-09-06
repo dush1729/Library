@@ -11,7 +11,7 @@ inline ll pw(ll base, ll exp) {
 
 inline ll inv(ll x) { return pw(x, MOD-2); }
 
-ll fact[MN] = { 1 }, ifact[MN] = { 1 };
+ll fact[MX] = { 1 }, ifact[MX] = { 1 };
 
 inline ll nCr(int n, int k) { return fact[n]*ifact[k]%MOD*ifact[n-k]%MOD; }
 

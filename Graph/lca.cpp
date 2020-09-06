@@ -1,5 +1,5 @@
 namespace lca {
-    int d[MN], L[MN][20];
+    int d[MX], L[MX][20];
     void dfs(vector<int> * G, int u = 1, int p = 0) {
         d[u] = d[p] + 1, L[u][0] = p;
         for (int i = 0; i < 18 && L[u][i]; i++) L[u][i + 1] = L[L[u][i]][i];
