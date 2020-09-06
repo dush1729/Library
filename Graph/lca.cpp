@@ -1,4 +1,4 @@
-struct lca {
+namespace lca {
     int d[MN], L[MN][20];
     void dfs(vector<int> * G, int u = 1, int p = 0) {
         d[u] = d[p] + 1, L[u][0] = p;
@@ -12,4 +12,7 @@ struct lca {
         for (int i = 18; i >= 0; i--) if (L[u][i] && L[u][i] != L[v][i]) u = L[u][i], v = L[v][i];
         return L[u][0];
     }
+	inline int dist(vector<int> * G, int u, int v) {
+		return d[u]+d[v]-2*lca(G, u, v);
+	}
 }

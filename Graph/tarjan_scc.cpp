@@ -1,4 +1,4 @@
-struct tarjan {
+namespace tarjan {
     int cnt, scc_num, scc[MN], in[MN], low[MN];
     stack<int> s;
     bitset<MN> ins;
