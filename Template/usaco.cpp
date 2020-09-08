@@ -21,7 +21,8 @@ using vi = vector<int>;    using vl = vector<ll>;   using vd = vector<ld>;
 using vii = vector<ii>;    using vpl = vector<pl>;  using vpd = vector<pd>;
 template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 template<typename T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>; // Use with caution
-constexpr int INF = 1e9; constexpr ll LINF = 1e18; constexpr ll MOD = 1e9+7; constexpr ld PI = 4*atan((ld)1);
+constexpr ll MX = 1e5+5, ll INF = 1e9, LINF = 1e18, ll MOD = 1e9+7;
+constexpr ld PI = 4*atan((ld)1);
 void io(const str & s) {
 	if (fopen((s+".in").c_str(), "r")) freopen((s+".in").c_str(), "r", stdin), freopen((s+".out").c_str(), "w", stdout);
 	ios_base::sync_with_stdio(0), cin.tie(0);
