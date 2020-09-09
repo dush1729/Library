@@ -12,7 +12,7 @@
 #define rsz resize
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
-#define tr(a, x) for (auto& a : x)
+#define tr(a, x) for (auto & a : x)
 #define mem(a, b) memset(a, (b), sizeof(a))
 #define pc __builtin_popcount
 #define clz __builtin_clz
