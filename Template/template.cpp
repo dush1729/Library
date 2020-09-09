@@ -24,8 +24,8 @@ using vi = vector<int>;    using vl = vector<ll>;   using vd = vector<ld>;
 using vii = vector<ii>;    using vpl = vector<pl>;  using vpd = vector<pd>;
 template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 template<typename T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>; // Use with caution
-constexpr ll MX = 1e5+5, ll INF = 1e9, LINF = 1e18, ll MOD = 1e9+7;
 constexpr ld PI = 4*atan((ld)1);
+constexpr ll MX = 1e5+5, ll INF = 1e9, LINF = 1e18, ll MOD = 1e9+7;
 
 int main() {
 	if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);
