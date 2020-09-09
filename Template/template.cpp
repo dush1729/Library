@@ -14,6 +14,9 @@
 #define all(x) begin(x), end(x)
 #define tr(a, x) for (auto& a : x)
 #define mem(a, b) memset(a, (b), sizeof(a))
+#define pc __builtin_popcount
+#define clz __builtin_clz
+#define ctz __builtin_ctz
 using namespace std; using namespace __gnu_pbds; using namespace __gnu_cxx;
 using str = string; using ll = long long; using ld = long double; using cd = complex<ld>;
 using ii = pair<int, int>; using pl = pair<ll, ll>; using pd = pair<ld, ld>;
