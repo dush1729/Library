@@ -8,7 +8,6 @@ inline ll pw(ll base, ll exp) {
 	}
 	return res;
 }
-
 inline ll inv(ll x) { return pw(x, MOD-2); }
 
 ll fact[MX] = { 1 }, ifact[MX] = { 1 };
