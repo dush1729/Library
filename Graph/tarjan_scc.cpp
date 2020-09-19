@@ -1,7 +1,7 @@
-struct tarjan {
-    int cnt, scc_num, scc[MN], in[MN], low[MN];
+namespace tarjan {
+    int cnt, scc_num, scc[MX], in[MX], low[MX];
     stack<int> s;
-    bitset<MN> ins;
+    bitset<MX> ins;
     void tarjan(vector<int> * G, int u) {
         low[u] = in[u] = cnt++, ins[u] = 1; s.push(u);        
         for (int v : G[u]) {

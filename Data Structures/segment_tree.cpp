@@ -1,5 +1,5 @@
 template<typename T> struct seg_tree {
-	T seg[4*MN], tmp[4*MN];
+	T seg[4*MX], tmp[4*MX];
 	inline T pull(const T & a, const T & b) { return a+b; }
 	inline void push(int l, int r, int n) {
 		seg[n] += (r-l+1)*tmp[n];
@@ -11,7 +11,7 @@ template<typename T> struct seg_tree {
 		if (l == r) seg[n] = v;
 		else {
 			int m = (l+r)>>1;
-			build(l, m, n<<1), build(m+1, r, n<<1|1);
+			build(v, l, m, n<<1), build(v, m+1, r, n<<1|1);
 			seg[n] = pull(seg[n<<1], seg[n<<1|1]);
 		}
 	}

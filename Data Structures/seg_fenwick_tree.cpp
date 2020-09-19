@@ -22,7 +22,7 @@ struct node {
 		int m = (l + r) >> 1;
 		return (c[0] ? c[0]->query(a, b, l, m) : 0) + (c[1] ? c[1]->query(a, b, m + 1, r) : 0);
 	}
-} FT[MN];
+} FT[MX];
 
 void update(int x, int y, int v) { for (; x < N; x += x & -x) FT[x].update(y, v); }
 int query(int x, int y1, int y2) { int ret = 0; for (; x > 0; x -= x & -x) ret += FT[x].query(y1, y2); return ret; }

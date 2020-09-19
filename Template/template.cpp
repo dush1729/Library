@@ -12,8 +12,11 @@
 #define rsz resize
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
-#define tr(a, x) for (auto& a : x)
+#define tr(a, x) for (auto & a : x)
 #define mem(a, b) memset(a, (b), sizeof(a))
+#define pc __builtin_popcount
+#define clz __builtin_clz
+#define ctz __builtin_ctz
 using namespace std; using namespace __gnu_pbds; using namespace __gnu_cxx;
 using str = string; using ll = long long; using ld = long double; using cd = complex<ld>;
 using ii = pair<int, int>; using pl = pair<ll, ll>; using pd = pair<ld, ld>;
@@ -21,7 +24,8 @@ using vi = vector<int>;    using vl = vector<ll>;   using vd = vector<ld>;
 using vii = vector<ii>;    using vpl = vector<pl>;  using vpd = vector<pd>;
 template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 template<typename T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>; // Use with caution
-constexpr int INF = 1e9; constexpr ll LINF = 1e18; constexpr ll MOD = 1e9+7; constexpr ld PI = 4*atan((ld)1);
+constexpr ld PI = 4*atan((ld)1);
+constexpr ll MX = 1e5+5, ll INF = 1e9, LINF = 1e18, ll MOD = 1e9+7;
 
 int main() {
 	if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);
