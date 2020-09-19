@@ -33,7 +33,7 @@ vector<ii> factorize(ll N) {
 
 ll num_pf(ll N) {
 	ll idx = 0, pf = pr[idx], ans = 0;
-	while (N != 1 && pf * pf <= N)) {
+	while (N != 1 && pf * pf <= N) {
 		while (N % pf == 0) { N /= pf; ans++; }
 		pf = pr[++idx];
   	}
@@ -52,7 +52,7 @@ ll num_diff_pf(ll N) {
 
 ll sum_pf(ll N) {
 	ll idx = 0, pf = pr[idx], ans = 0;
-  	while (N != 1 && pf * pf <= N)) {
+  	while (N != 1 && pf * pf <= N) {
 		while (N % pf == 0) { N /= pf; ans += pf; }
 		pf = pr[++idx];
   	}
@@ -61,7 +61,7 @@ ll sum_pf(ll N) {
 
 ll num_div(ll N) {
 	ll idx = 0, pf = pr[idx], ans = 1;
-  	while (N != 1 && pf * pf <= N)) {
+  	while (N != 1 && pf * pf <= N) {
 		ll power = 0;
 		while (N % pf == 0) { N /= pf; ++power; }
 		ans *= (power + 1);
