@@ -6,7 +6,7 @@ template<typename T> struct seg_tree {
 		if (l != r) tmp[n<<1] += tmp[n], tmp[n<<1|1] += tmp[n];
 		tmp[n] = 0;
 	}
-	void build(T v, int l = 0, int r = MX, int n = 1) {
+	void build(T v, int l = 0, int r = MX-1, int n = 1) {
 		if (l == r) seg[n] = v;
 		else {
 			int m = (l+r)>>1;
@@ -14,7 +14,7 @@ template<typename T> struct seg_tree {
 			seg[n] = pull(seg[n<<1], seg[n<<1|1]);
 		}
 	}
-	void update(int x, T v, int l = 0, int r = MX, int n = 1) {
+	void update(int x, T v, int l = 0, int r = MX-1, int n = 1) {
 		if (l == r) seg[n] += v;
 		else {
 			int m = (l+r)>>1;
@@ -22,7 +22,7 @@ template<typename T> struct seg_tree {
 			seg[n] = pull(seg[n<<1], seg[n<<1|1]);
 		}
 	}
-	void update(int a, int b, T v, int l = 0, int r = MX, int n = 1) {
+	void update(int a, int b, T v, int l = 0, int r = MX-1, int n = 1) {
 		push(l, r, n);
 		if (l > r || l > b || r < a) return;
 		if (l >= a && r <= b) {
@@ -35,7 +35,7 @@ template<typename T> struct seg_tree {
 			seg[n] = pull(seg[n<<1], seg[n<<1|1]);
 		}
 	}
-	T query(int a, int b, int l = 0, int r = MX, int n = 1) {
+	T query(int a, int b, int l = 0, int r = MX-1, int n = 1) {
 		if (a > b || l > b || r < a) return 0;
 		push(l, r, n);
 		if (l >= a && r <= b) return seg[n];
