@@ -2,6 +2,7 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/rope>
+#define io(name) freopen((str(name)+".in").c_str(), "r", stdin), freopen((str(name)+".out").c_str(), "w", stdout), ios_base::sync_with_stdio(0), cin.tie(0)
 #define f first
 #define s second
 #define mp make_pair
@@ -25,12 +26,12 @@ using vii = vector<ii>;    using vpl = vector<pl>;  using vpd = vector<pd>;
 template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 template<typename T> using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>; // Use with caution
 constexpr ld PI = 4*atan((ld)1);
-constexpr ll MX = 1e5+5, ll INF = 1e9, LINF = 1e18, ll MOD = 1e9+7;
+constexpr ll INF = 1e9, LINF = 1e18, MOD = 1e9+7;
+constexpr ll MX = 1e5+5;
 
 int main() {
-    ifstream cin("in"); ofstream cout("in");
-	ios_base::sync_with_stdio(0), cin.tie(0);
-
-
+	io("name");
+	
+	
 	
 }
