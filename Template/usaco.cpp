@@ -2,7 +2,7 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/rope>
-#define io(name) freopen((str(name)+".in").c_str(), "r", stdin), freopen((str(name)+".out").c_str(), "w", stdout), ios_base::sync_with_stdio(0), cin.tie(0)
+#define io(name) freopen((str(name)+".in").c_str(), "r", stdin), freopen((str(name)+".out").c_str(), "w", stdout)
 #define f first
 #define s second
 #define mp make_pair
@@ -31,8 +31,8 @@ constexpr ll MX = 1e5+5;
 
 
 int main() {
-	io("name");
-	
+	io("name"); if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);
+	ios_base::sync_with_stdio(0), cin.tie(0);
 	
 	
 }
