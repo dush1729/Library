@@ -29,6 +29,7 @@ constexpr ld PI = 4*atan((ld)1);
 constexpr ll INF = 1e9, LINF = 1e18, MOD = 1e9+7;
 constexpr ll MX = 1e5+5;
 
+
 int main() {
 	io("name");
 	

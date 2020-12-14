@@ -28,6 +28,7 @@ constexpr ld PI = 4*atan((ld)1);
 constexpr ll INF = 1e9, LINF = 1e18, MOD = 1e9+7;
 constexpr int MX = 1e5+5;
 
+
 int main() {
 	if (fopen("in", "r")) freopen("in", "r", stdin), freopen("out", "w", stdout);
 	ios_base::sync_with_stdio(0), cin.tie(0);
