@@ -2,7 +2,7 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/rope>
-#define io(name) freopen((str(name)+".in").c_str(), "r", stdin), freopen((str(name)+".out").c_str(), "w", stdout)
+#define io(name) if (fopen((str(name)+".in").c_str(), "r")) freopen((str(name)+".in").c_str(), "r", stdin), freopen((str(name)+".out").c_str(), "w", stdout)
 #define f first
 #define s second
 #define mp make_pair
